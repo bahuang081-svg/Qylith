@@ -1,0 +1,60 @@
+[package]
+name = "qylith-primitives"
+version = "0.1.0"
+edition = "2021"
+authors = ["Qylith Team"]
+description = "Qylith cryptography primitives: FALCON-1024 signatures and ML-KEM-768 key encapsulation"
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+# Substrate primitives (for runtime compatibility)
+sp-core = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+sp-runtime = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+sp-std = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+sp-application-crypto = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+
+# Codec for serialization
+codec = { package = "parity-scale-codec", version = "3.6", features = ["derive", "max-encoded-len"] }
+scale-info = { version = "2.10", features = ["derive"] }
+
+# Hash functions
+sha2 = { version = "0.10", optional = true }
+sha3 = { version = "0.10", optional = true }
+
+# Post-quantum cryptography libraries
+# Note: These are optional dependencies that will be enabled once the libraries are available
+# For now, we provide stub implementations
+#
+# TODO: Enable these dependencies when falcon-rust or pqcrypto-falcon is fully compatible
+# falcon-rust = { version = "0.3", optional = true }
+# pqcrypto-falcon = { version = "0.3", optional = true }
+# pqcrypto-kyber = { version = "0.9", optional = true }
+
+# For ring-based crypto (used in stub implementations)
+getrandom = { version = "0.2", features = ["std"] }
+rand = { version = "0.8", features = ["small_rng"] }
+
+# Async and traits
+async-trait = "0.1"
+
+# Zeroize for secure memory handling
+zeroize = { version = "1.7", features = ["derive"] }
+
+[dev-dependencies]
+sp-core = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+serde_json = "1.0"
+
+[features]
+default = ["std"]
+std = [
+    "sp-core/std",
+    "sp-runtime/std",
+    "sp-std/std",
+    "sp-application-crypto/std",
+    "codec/std",
+    "scale-info/std",
+    "sha2",
+    "sha3",
+]

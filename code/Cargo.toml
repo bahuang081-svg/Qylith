@@ -1,0 +1,34 @@
+[package]
+name = "qylith"
+version = "0.1.0"
+edition = "2021"
+authors = ["Qylith Team"]
+description = "Qylith - AI-Native Post-Quantum L1 Blockchain"
+
+[workspace]
+members = [
+    "node",
+    "runtime",
+    "primitives/crypto",
+]
+
+resolver = "2"
+
+[profile.release]
+panic = "unwind"
+opt-level = 3
+lto = true
+codegen-units = 1
+
+[profile.production]
+inherits = "release"
+strip = true
+
+[profile.dev]
+opt-level = 0
+debug = false
+lto = false
+
+[patch."https://github.com/parity-tech/substrate"]
+git = "https://github.com/parity-tech/substrate.git"
+branch = "polkadot-v1.0.0"

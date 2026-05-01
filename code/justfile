@@ -1,0 +1,154 @@
+# Qylith justfile
+# Alternative to Makefile for common development tasks
+
+# Set default recipe
+default: help
+
+# Install prerequisites
+install-deps:
+    #!/bin/bash
+    if ! command -v rustup &> /dev/null; then
+        echo "Installing Rust..."
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+        source ~/.cargo/env 2>/dev/null || true
+    fi
+    rustup default nightly
+    rustup target add wasm32-unknown-unknown --toolchain nightly
+    echo "Prerequisites installed"
+
+# Build the node
+build:
+    cargo build --release --bin qylith
+
+# Build in debug mode
+build-debug:
+    cargo build --bin qylith
+
+# Check the code
+check:
+    cargo check --workspace
+
+# Check with all features
+check-all:
+    cargo check --workspace --all-features
+
+# Run tests
+test:
+    cargo test --workspace --all-features
+
+# Test specific crate
+test-crate PACKAGE:
+    cargo test -p {{PACKAGE}}
+
+# Format code
+fmt:
+    cargo fmt --all
+
+# Check formatting
+fmt-check:
+    cargo fmt --all -- --check
+
+# Run clippy
+clippy:
+    cargo clippy --workspace --all-targets -- -D warnings
+
+# Run all linting
+lint: fmt clippy
+
+# Clean build artifacts
+clean:
+    cargo clean
+
+# Update dependencies
+update:
+    cargo update
+
+# Generate documentation
+docs:
+    cargo doc --workspace --no-deps
+
+# Build Docker image
+docker-build:
+    docker build -t qylith:latest .
+
+# Run Docker container
+docker-run:
+    docker run -p 30333:30333 -p 9933:9933 -p 9944:9944 -v qylith-data:/qylith/data qylith:latest
+
+# Run in development mode
+dev:
+    RUST_LOG=debug ./target/release/qylith --dev --tmp
+
+# Run with local chain
+run-local:
+    ./target/release/qylith --chain local
+
+# Purge local chain
+purge:
+    ./target/release/qylith purge-chain --dev
+
+# Generate genesis
+genesis:
+    ./target/release/qylith build-spec --chain development > scripts/genesis-spec.json
+
+# Export genesis to raw format
+genesis-raw:
+    ./target/release/qylith build-spec --chain development --raw > scripts/genesis-raw.json
+
+# Build WASM runtime
+build-wasm:
+    cargo build --release -p qylith-runtime
+
+# Check WASM build
+check-wasm:
+    cargo build --release -p qylith-runtime --dry-run
+
+# Run benchmarks
+benchmark:
+    cargo bench --workspace
+
+# Benchmark specific pallet
+benchmark-pallet PALLET:
+    cargo bench -p {{PALLET}}
+
+# Build with profiling
+profile:
+    RUSTFLAGS='-C force-frame-pointers=yes' cargo build --release --bin qylith
+
+# Security audit
+audit:
+    cargo audit
+
+# WASM-only build
+build-wasm-only:
+    cargo build --release -p qylith-runtime
+
+# Generate chain spec
+spec:
+    ./target/release/qylith build-spec --chain development > scripts/chain-spec.json
+
+# Convert spec to raw
+spec-raw:
+    ./target/release/qylith build-spec --chain development --raw > scripts/chain-spec-raw.json
+
+# Initialize new project
+init: install-deps build
+
+# Help
+help:
+    @echo "Qylith Blockchain - Available recipes:"
+    @echo ""
+    @echo "  build          - Build the Qylith node (release)"
+    @echo "  check          - Check the code"
+    @echo "  test           - Run tests"
+    @echo "  fmt            - Format code"
+    @echo "  clippy         - Run linter"
+    @echo "  lint           - Run all linting"
+    @echo "  clean          - Clean build artifacts"
+    @echo "  docs           - Generate documentation"
+    @echo "  docker-build   - Build Docker image"
+    @echo "  docker-run     - Run Docker container"
+    @echo "  dev            - Run in development mode"
+    @echo "  purge          - Purge local chain data"
+    @echo "  audit          - Run security audit"
+    @echo "  benchmark      - Run benchmarks"

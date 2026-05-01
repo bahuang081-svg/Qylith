@@ -1,0 +1,151 @@
+[package]
+name = "qylith-runtime"
+version = "0.1.0"
+edition = "2021"
+authors = ["Qylith Team"]
+
+[package.metadata.docs.rs]
+targets = ["x86_64-unknown-linux-gnu"]
+
+[dependencies]
+# Qylith custom pallets and primitives
+pallet-aem = { path = "src/pallets/aem", default-features = false }
+qylith-primitives = { path = "../../primitives/crypto", default-features = false }
+
+# Substrate frame
+frame-benchmarking = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+frame-executive = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+frame-support = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+frame-system = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+frame-system-benchmarking = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+frame-try-runtime = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+
+# Substrate primitives
+sp-api = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+sp-block-builder = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+sp-consensus-aura = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+sp-core = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+sp-genesis-builder = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+sp-inherents = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+sp-offchain = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+sp-runtime = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+sp-session = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+sp-statement = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+sp-transaction-pool = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+sp-version = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+sp-weights = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+
+# Cumulus
+pallet-collator-selection = { git = "https://github.com/paritytech/cumulus.git", branch = "polkadot-v1.0.0", default-features = false }
+cumulus-pallet-aura-ext = { git = "https://github.com/paritytech/cumulus.git", branch = "polkadot-v1.0.0", default-features = false }
+cumulus-pallet-parachain-system = { git = "https://github.com/paritytech/cumulus.git", branch = "polkadot-v1.0.0", default-features = false }
+cumulus-pallet-xcm = { git = "https://github.com/paritytech/cumulus.git", branch = "polkadot-v1.0.0", default-features = false }
+cumulus-primitives-core = { git = "https://github.com/paritytech/cumulus.git", branch = "polkadot-v1.0.0", default-features = false }
+cumulus-primitives-storage-proof-recovery = { git = "https://github.com/paritytech/cumulus.git", branch = "polkadot-v1.0.0", default-features = false }
+cumulus-primitives-utility = { git = "https://github.com/paritytech/cumulus.git", branch = "polkadot-v1.0.0", default-features = false }
+parachain-info = { git = "https://github.com/paritytech/cumulus.git", branch = "polkadot-v1.0.0", default-features = false }
+
+# Frontier (Ethereum compatibility)
+fp-account = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master", default-features = false }
+fp-evm = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master", default-features = false }
+fp-rpc = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master", default-features = false }
+fp-storage = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master", default-features = false }
+pallet-base-fee = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master", default-features = false }
+pallet-ethereum = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master", default-features = false }
+pallet-evm = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master", default-features = false }
+pallet-evm-precompile-blake2f = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master", default-features = false }
+pallet-evm-precompile-bn128 = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master", default-features = false }
+pallet-evm-precompile-modexp = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master", default-features = false }
+pallet-evm-precompile-point-verification = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master", default-features = false }
+pallet-evm-precompileset-assets-erc20 = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master", default-features = false }
+pallet-evm-precompileset-registry = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master", default-features = false }
+pallet-hotfix-sufficients = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master", default-features = false }
+pallet-randomness-collective-flip = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+pallet-sudo = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+pallet-timestamp = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+pallet-transaction-payment = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+pallet-utility = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", default-features = false }
+
+# Additional
+log = "0.4"
+async-trait = "0.1"
+codec = { package = "parity-scale-codec", version = "3.6", features = ["derive", "max-encoded-len"] }
+scale-info = { version = "2.10", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"], optional = true }
+
+# STARK verification (for AEM)
+# Note: These are placeholder dependencies for future integration
+ ark-std = { version = "0.4", optional = true }
+ winter-utils = { version = "0.6", optional = true }
+
+[build-dependencies]
+substrate-wasm-builder = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0", optional = true }
+
+[features]
+default = ["std"]
+std = [
+    "frame-benchmarking/std",
+    "frame-executive/std",
+    "frame-support/std",
+    "frame-system/std",
+    "frame-system-benchmarking/std",
+    "frame-try-runtime/std",
+    "sp-api/std",
+    "sp-block-builder/std",
+    "sp-consensus-aura/std",
+    "sp-core/std",
+    "sp-genesis-builder/std",
+    "sp-inherents/std",
+    "sp-offchain/std",
+    "sp-runtime/std",
+    "sp-session/std",
+    "sp-statement/std",
+    "sp-transaction-pool/std",
+    "sp-version/std",
+    "sp-weights/std",
+    "cumulus-pallet-aura-ext/std",
+    "cumulus-pallet-parachain-system/std",
+    "cumulus-pallet-xcm/std",
+    "cumulus-primitives-core/std",
+    "cumulus-primitives-storage-proof-recovery/std",
+    "cumulus-primitives-utility/std",
+    "fp-account/std",
+    "fp-evm/std",
+    "fp-rpc/std",
+    "fp-storage/std",
+    "pallet-aem/std",
+    "pallet-base-fee/std",
+    "pallet-collator-selection/std",
+    "pallet-ethereum/std",
+    "pallet-evm/std",
+    "pallet-evm-precompile-blake2f/std",
+    "pallet-evm-precompile-bn128/std",
+    "pallet-evm-precompile-modexp/std",
+    "pallet-evm-precompile-point-verification/std",
+    "pallet-evm-precompileset-assets-erc20/std",
+    "pallet-evm-precompileset-registry/std",
+    "pallet-hotfix-sufficients/std",
+    "pallet-randomness-collective-flip/std",
+    "pallet-sudo/std",
+    "pallet-timestamp/std",
+    "pallet-transaction-payment/std",
+    "pallet-utility/std",
+    "parachain-info/std",
+    "qylith-primitives/std",
+    "codec/std",
+    "scale-info/std",
+    "serde",
+]
+runtime-benchmarks = [
+    "frame-benchmarking/runtime-benchmarks",
+    "frame-system-benchmarking/runtime-benchmarks",
+    "pallet-aem/runtime-benchmarks",
+    "pallet-collator-selection/runtime-benchmarks",
+    "sp-runtime/runtime-benchmarks",
+]
+try-runtime = [
+    "frame-try-runtime/try-runtime",
+    "frame-executive/try-runtime",
+    "pallet-aem/try-runtime",
+    "pallet-collator-selection/try-runtime",
+]

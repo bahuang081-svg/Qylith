@@ -1,0 +1,127 @@
+[package]
+name = "qylith-node"
+version = "0.1.0"
+edition = "2021"
+authors = ["Qylith Team"]
+build = "build.rs"
+
+[[bin]]
+name = "qylith"
+path = "src/main.rs"
+
+[[bin]]
+name = "qylith-key"
+path = "src/key.rs"
+
+[dependencies]
+# Qylith primitives
+qylith-primitives = { path = "../primitives/crypto" }
+
+# Substrate frame
+frame-benchmarking = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+frame-executive = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+frame-support = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+frame-system = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+frame-system-benchmarking = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+frame-try-runtime = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+
+# Substrate primitives
+sp-api = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+sp-block-builder = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+sp-consensus-aura = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+sp-core = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+sp-genesis-builder = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+sp-inherents = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+sp-offchain = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+sp-keystore = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+sp-restoration = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+sp-rpc = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+sp-runtime = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+sp-session = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+sp-statement = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+sp-transaction-pool = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+sp-version = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+sp-weights = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+
+# Cumulus
+pallet-collator-selection = { git = "https://github.com/paritytech/cumulus.git", branch = "polkadot-v1.0.0" }
+cumulus-pallet-aura-ext = { git = "https://github.com/paritytech/cumulus.git", branch = "polkadot-v1.0.0" }
+cumulus-pallet-parachain-system = { git = "https://github.com/paritytech/cumulus.git", branch = "polkadot-v1.0.0" }
+cumulus-pallet-xcm = { git = "https://github.com/paritytech/cumulus.git", branch = "polkadot-v1.0.0" }
+cumulus-primitives-core = { git = "https://github.com/paritytech/cumulus.git", branch = "polkadot-v1.0.0" }
+cumulus-primitives-storage-proof-recovery = { git = "https://github.com/paritytech/cumulus.git", branch = "polkadot-v1.0.0" }
+cumulus-primitives-utility = { git = "https://github.com/paritytech/cumulus.git", branch = "polkadot-v1.0.0" }
+parachain-info = { git = "https://github.com/paritytech/cumulus.git", branch = "polkadot-v1.0.0" }
+
+# Polkadot
+polkadot-cli = { git = "https://github.com/paritytech/polkadot.git", branch = "v1.0.0", default-features = false }
+polkadot parachain = { git = "https://github.com/paritytech/polkadot.git", branch = "v1.0.0" }
+polkadot-primitives = { git = "https://github.com/paritytech/polkadot.git", branch = "v1.0.0" }
+polkadot-service = { git = "https://github.com/paritytech/polkadot.git", branch = "v1.0.0" }
+polkadot-xcm = { git = "https://github.com/paritytech/polkadot.git", branch = "v1.0.0" }
+xcm = { git = "https://github.com/paritytech/polkadot.git", branch = "v1.0.0" }
+xcm-builder = { git = "https://github.com/paritytech/polkadot.git", branch = "v1.0.0" }
+xcm-executor = { git = "https://github.com/paritytech/polkadot.git", branch = "v1.0.0" }
+
+# Qylith runtime
+qylith-runtime = { path = "../runtime" }
+
+# Frontier (Ethereum compatibility)
+fp-account = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master" }
+fp-evm = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master" }
+fp-rpc = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master" }
+fp-storage = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master" }
+pallet-base-fee = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master" }
+pallet-ethereum = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master" }
+pallet-evm = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master" }
+pallet-evm-precompile-blake2f = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master" }
+pallet-evm-precompile-bn128 = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master" }
+pallet-evm-precompile-modexp = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master" }
+pallet-evm-precompile-point-verification = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master" }
+pallet-evm-precompileset-assets-erc20 = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master" }
+pallet-evm-precompileset-registry = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master" }
+pallet-hotfix-sufficients = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master" }
+pallet-polymath-core = { git = "https://github.com/polkadot-evm/frontier.git", branch = "master" }
+pallet-randomness-collective-flip = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+pallet-sudo = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+pallet-timestamp = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+pallet-transaction-payment = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+pallet-utility = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+
+# Additional utilities
+async-trait = "0.1"
+clap = { version = "4.4", features = ["derive"] }
+codec = { package = "parity-scale-codec", version = "3.6", features = ["derive", "max-encoded-len"] }
+futures = "0.3"
+hex-literal = "0.4"
+jsonrpsee = { version = "0.20", features = ["server"] }
+log = "0.4"
+parking_lot = "0.12"
+scale-info = { version = "2.10", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+smallvec = "1.13"
+tempfile = "3.8"
+tokio = { version = "1.28", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[build-dependencies]
+substrate-build-script-utils = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+substrate-wasm-builder = { git = "https://github.com/parity-tech/substrate.git", branch = "polkadot-v1.0.0" }
+
+[features]
+default = ["native"]
+native = [
+    "polkadot-service/native",
+    "qylith-runtime/native",
+]
+runtime-benchmarks = [
+    "qylith-runtime/runtime-benchmarks",
+    "pallet-collator-selection/runtime-benchmarks",
+]
+try-runtime = [
+    "qylith-runtime/try-runtime",
+    "frame-try-runtime/try-runtime",
+    "frame-executive/try-runtime",
+]
