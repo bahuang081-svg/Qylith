@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roadmap | Qylith</title>
+  <meta name="description" content="Qylith development roadmap: from testnet to quantum-ready mainnet.">
+  <link rel="canonical" href="https://qylith.xyz/roadmap.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .roadmap-hero { min-height: 50vh; padding-top: 120px; }
+    .roadmap-container { max-width: 800px; margin: 0 auto; }
+    .phase-indicator { display: flex; justify-content: center; gap: 2rem; margin-bottom: 4rem; flex-wrap: wrap; }
+    .phase-badge { padding: 0.5rem 1.5rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: 20px; font-size: 0.9rem; }
+    .phase-badge.active { background: var(--gradient-primary); border-color: transparent; }
+  </style>
+</head>
+<body data-page="roadmap">
+  <canvas id="particles"></canvas>
+  
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo"><svg viewBox="0 0 40 40" fill="none"><defs><linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00D4FF"/><stop offset="100%" stop-color="#7B2FFF"/></linearGradient></defs><circle cx="20" cy="20" r="18" stroke="url(#logoGrad)" stroke-width="2" fill="none"/><path d="M20 8 L20 32 M12 16 Q20 12 28 16 M12 24 Q20 28 28 24" stroke="url(#logoGrad)" stroke-width="2" fill="none"/><circle cx="20" cy="20" r="4" fill="url(#logoGrad)"/></svg><span>QYLITH</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="architecture.html" data-i18n="nav.architecture">Architecture</a></li>
+      <li><a href="tokenomics.html" data-i18n="nav.tokenomics">Tokenomics</a></li>
+      <li><a href="roadmap.html" class="active" data-i18n="nav.roadmap">Roadmap</a></li>
+      <li><a href="ecosystem.html" data-i18n="nav.ecosystem">Ecosystem</a></li>
+      <li><a href="developers.html" data-i18n="nav.developers">Developers</a></li>
+      <li><a href="about.html" data-i18n="nav.about">About</a></li>
+      <li><a href="whitepaper.html" data-i18n="nav.whitepaper">Whitepaper</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="lang-toggle" aria-label="Toggle language"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><span>EN</span></button>
+      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  
+  <div class="mobile-nav">
+    <a href="index.html">Home</a><a href="architecture.html">Architecture</a><a href="tokenomics.html">Tokenomics</a><a href="roadmap.html">Roadmap</a><a href="ecosystem.html">Ecosystem</a><a href="developers.html">Developers</a><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a>
+  </div>
+  
+  <main class="page-content">
+    <section class="hero roadmap-hero">
+      <div class="hero-content">
+        <p class="hero-subtitle" data-i18n="roadmap.label">Roadmap</p>
+        <h1 class="hero-title gradient-text">2026 — 2028</h1>
+        <p class="hero-description">From testnet launch to a fully quantum-ready global network.</p>
+      </div>
+    </section>
+    
+    <section>
+      <div class="container">
+        <div class="phase-indicator fade-in">
+          <span class="phase-badge active">Phase 1: Genesis</span>
+          <span class="phase-badge">Phase 2: Exodus</span>
+          <span class="phase-badge">Phase 3: Expansion</span>
+          <span class="phase-badge">Phase 4: Maturity</span>
+        </div>
+        
+        <div class="roadmap-container">
+          <div class="roadmap fade-in">
+            <!-- 2026 Q2 -->
+            <div class="roadmap-item">
+              <span class="roadmap-date">2026 Q2</span>
+              <h3 class="roadmap-title" data-i18n="roadmap.q2_2026.title">Foundation</h3>
+              <ul class="roadmap-items">
+                <li data-i18n="roadmap.q2_2026.items.0">Testnet Alpha Launch</li>
+                <li data-i18n="roadmap.q2_2026.items.1">Security Audit Complete</li>
+                <li data-i18n="roadmap.q2_2026.items.2">Hackathon Participation</li>
+              </ul>
+            </div>
+            
+            <!-- 2026 Q3 -->
+            <div class="roadmap-item">
+              <span class="roadmap-date">2026 Q3</span>
+              <h3 class="roadmap-title" data-i18n="roadmap.q3_2026.title">Testnet</h3>
+              <ul class="roadmap-items">
+                <li data-i18n="roadmap.q3_2026.items.0">Testnet Beta Release</li>
+                <li data-i18n="roadmap.q3_2026.items.1">Developer SDK v1.0</li>
+                <li data-i18n="roadmap.q3_2026.items.2">Community Growth</li>
+              </ul>
+            </div>
+            
+            <!-- 2026 Q4 -->
+            <div class="roadmap-item">
+              <span class="roadmap-date">2026 Q4</span>
+              <h3 class="roadmap-title" data-i18n="roadmap.q4_2026.title">Mainnet Prep</h3>
+              <ul class="roadmap-items">
+                <li data-i18n="roadmap.q4_2026.items.0">Mainnet Candidate</li>
+                <li data-i18n="roadmap.q4_2026.items.1">Cross-Chain Bridge</li>
+                <li data-i18n="roadmap.q4_2026.items.2">DeFi Ecosystem Launch</li>
+              </ul>
+            </div>
+            
+            <!-- 2027 Q1 -->
+            <div class="roadmap-item">
+              <span class="roadmap-date">2027 Q1</span>
+              <h3 class="roadmap-title" data-i18n="roadmap.q1_2027.title">Mainnet</h3>
+              <ul class="roadmap-items">
+                <li data-i18n="roadmap.q1_2027.items.0">Mainnet Launch</li>
+                <li data-i18n="roadmap.q1_2027.items.1">Staking & Governance</li>
+                <li data-i18n="roadmap.q1_2027.items.2">First DApps Deploy</li>
+              </ul>
+            </div>
+            
+            <!-- 2027 Q2 -->
+            <div class="roadmap-item">
+              <span class="roadmap-date">2027 Q2</span>
+              <h3 class="roadmap-title" data-i18n="roadmap.q2_2027.title">Expansion</h3>
+              <ul class="roadmap-items">
+                <li data-i18n="roadmap.q2_2027.items.0">Layer 2 Solutions</li>
+                <li data-i18n="roadmap.q2_2027.items.1">Enterprise Adoption</li>
+                <li data-i18n="roadmap.q2_2027.items.2">AI Agent Marketplace</li>
+              </ul>
+            </div>
+            
+            <!-- 2027 Q3-Q4 -->
+            <div class="roadmap-item">
+              <span class="roadmap-date">2027 Q3-Q4</span>
+              <h3 class="roadmap-title" data-i18n="roadmap.q4_2027.title">Quantum Ready</h3>
+              <ul class="roadmap-items">
+                <li data-i18n="roadmap.q4_2027.items.0">Full Quantum Security Network</li>
+                <li data-i18n="roadmap.q4_2027.items.1">Global Enterprise Rollout</li>
+                <li data-i18n="roadmap.q4_2027.items.2">Interoperability</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Milestone Cards -->
+    <section>
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2 class="section-title">Key <span class="gradient-text">Milestones</span></h2>
+        </div>
+        
+        <div class="card-grid fade-in">
+          <div class="card">
+            <div class="card-icon">🎯</div>
+            <h3 class="card-title">Testnet Alpha</h3>
+            <p class="card-description">Minimum viable product with core cryptography layer, basic staking, and developer tools.</p>
+            <p style="color:var(--cyan);font-size:0.85rem;margin-top:1rem;">Target: 2026 Q2</p>
+          </div>
+          
+          <div class="card">
+            <div class="card-icon">🔐</div>
+            <h3 class="card-title">Security Audit</h3>
+            <p class="card-description">Comprehensive audit by leading security firms covering cryptography, consensus, and smart contracts.</p>
+            <p style="color:var(--cyan);font-size:0.85rem;margin-top:1rem;">Target: 2026 Q2</p>
+          </div>
+          
+          <div class="card">
+            <div class="card-icon">🚀</div>
+            <h3 class="card-title">Mainnet Launch</h3>
+            <p class="card-description">Full production network with NPoS consensus, AI module, and cross-chain capabilities.</p>
+            <p style="color:var(--cyan);font-size:0.85rem;margin-top:1rem;">Target: 2027 Q1</p>
+          </div>
+          
+          <div class="card">
+            <div class="card-icon">🤖</div>
+            <h3 class="card-title">AI Agent Marketplace</h3>
+            <p class="card-description">Launch of native AI agent marketplace with reputation system and multi-agent coordination.</p>
+            <p style="color:var(--cyan);font-size:0.85rem;margin-top:1rem;">Target: 2027 Q2</p>
+          </div>
+          
+          <div class="card">
+            <div class="card-icon">🌐</div>
+            <h3 class="card-title">Enterprise Rollout</h3>
+            <p class="card-description">Enterprise-grade solutions for financial institutions, supply chain, and digital identity.</p>
+            <p style="color:var(--cyan);font-size:0.85rem;margin-top:1rem;">Target: 2027 Q3</p>
+          </div>
+          
+          <div class="card">
+            <div class="card-icon">⚛️</div>
+            <h3 class="card-title">Quantum Ready</h3>
+            <p class="card-description">Full quantum security network ready for post-quantum computing era. Crypto-agility confirmed.</p>
+            <p style="color:var(--cyan);font-size:0.85rem;margin-top:1rem;">Target: 2027 Q4</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="text-center">
+      <div class="container fade-in">
+        <h2 class="mb-3">Ready to Build the Future?</h2>
+        <p class="mb-4">Join our developer community and be part of the quantum-AI revolution.</p>
+        <div class="flex justify-center gap-2" style="flex-wrap:wrap;">
+          <a href="developers.html" class="btn btn-primary">Start Building</a>
+          <a href="ecosystem.html" class="btn btn-secondary" data-i18n="nav.ecosystem">Ecosystem</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="url(#logoGrad)" stroke-width="2" fill="none"/><path d="M20 8 L20 32 M12 16 Q20 12 28 16 M12 24 Q20 28 28 24" stroke="url(#logoGrad)" stroke-width="2" fill="none"/><circle cx="20" cy="20" r="4" fill="url(#logoGrad)"/></svg><span>QYLITH</span></a>
+          <p data-i18n="footer.disclaimer">Built with quantum-resistant cryptography and AI-native architecture.</p>
+          <div class="social-links">
+            <a href="https://github.com/bahuang081-svg/Qylith" target="_blank" rel="noopener" class="social-link" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+            <a href="https://x.com/na_an97613" target="_blank" rel="noopener" class="social-link" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-links"><h4 data-i18n="footer.quickLinks">Quick Links</h4><ul><li><a href="architecture.html">Architecture</a></li><li><a href="tokenomics.html">Tokenomics</a></li><li><a href="roadmap.html">Roadmap</a></li><li><a href="ecosystem.html">Ecosystem</a></li></ul></div>
+        <div class="footer-links"><h4 data-i18n="footer.resources">Resources</h4><ul><li><a href="whitepaper.html">Whitepaper</a></li><li><a href="developers.html">Developers</a></li><li><a href="about.html">About Us</a></li><li><a href="https://github.com/bahuang081-svg/Qylith" target="_blank" rel="noopener">GitHub</a></li></ul></div>
+        <div class="footer-links"><h4 data-i18n="footer.community">Community</h4><ul><li><a href="https://x.com/na_an97613" target="_blank" rel="noopener">X (Twitter)</a></li><li><a href="https://github.com/bahuang081-svg/Qylith" target="_blank" rel="noopener">GitHub</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><p data-i18n="footer.copyright">© 2026 Qylith. All rights reserved.</p><p>The digital fortress for the quantum era.</p></div>
+    </div>
+  </footer>
+  
+  <button class="back-to-top" aria-label="Back to top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+  
+  <script src="js/particles.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

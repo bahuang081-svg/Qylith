@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecture | Qylith</title>
+  <meta name="description" content="Explore Qylith's technical architecture: post-quantum cryptography, AI-native execution, and modular Layer 1 design.">
+  <link rel="canonical" href="https://qylith.xyz/architecture.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="architecture">
+  <canvas id="particles"></canvas>
+  
+  <!-- Navigation -->
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00D4FF"/>
+            <stop offset="100%" stop-color="#7B2FFF"/>
+          </linearGradient>
+        </defs>
+        <circle cx="20" cy="20" r="18" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
+        <path d="M20 8 L20 32 M12 16 Q20 12 28 16 M12 24 Q20 28 28 24" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
+        <circle cx="20" cy="20" r="4" fill="url(#logoGrad)"/>
+      </svg>
+      <span>QYLITH</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+      <li><a href="architecture.html" class="active" data-i18n="nav.architecture">Architecture</a></li>
+      <li><a href="tokenomics.html" data-i18n="nav.tokenomics">Tokenomics</a></li>
+      <li><a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a></li>
+      <li><a href="ecosystem.html" data-i18n="nav.ecosystem">Ecosystem</a></li>
+      <li><a href="developers.html" data-i18n="nav.developers">Developers</a></li>
+      <li><a href="about.html" data-i18n="nav.about">About</a></li>
+      <li><a href="whitepaper.html" data-i18n="nav.whitepaper">Whitepaper</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="lang-toggle" aria-label="Toggle language">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span>EN</span>
+      </button>
+      <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  
+  <div class="mobile-nav">
+    <a href="index.html" data-i18n="nav.home">Home</a>
+    <a href="architecture.html" data-i18n="nav.architecture">Architecture</a>
+    <a href="tokenomics.html" data-i18n="nav.tokenomics">Tokenomics</a>
+    <a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a>
+    <a href="ecosystem.html" data-i18n="nav.ecosystem">Ecosystem</a>
+    <a href="developers.html" data-i18n="nav.developers">Developers</a>
+    <a href="about.html" data-i18n="nav.about">About</a>
+    <a href="whitepaper.html" data-i18n="nav.whitepaper">Whitepaper</a>
+  </div>
+  
+  <main class="page-content">
+    <!-- Hero -->
+    <section class="hero" style="min-height: 60vh;">
+      <div class="hero-content">
+        <p class="hero-subtitle" data-i18n="architecture.label">Technical Architecture</p>
+        <h1 class="hero-title gradient-text">ARCHITECTURE</h1>
+        <p class="hero-description" data-i18n="architecture.desc">
+          Every layer designed with quantum resistance and AI-native capability as core architectural axioms.
+        </p>
+      </div>
+    </section>
+    
+    <!-- Full Architecture Diagram -->
+    <section id="layers">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2 class="section-title">Layered <span class="gradient-text">Architecture</span></h2>
+        </div>
+        
+        <div class="architecture-diagram fade-in">
+          <div class="layer-diagram">
+            <div class="layer">
+              <div class="layer-bar layer-application">
+                <strong data-i18n="architecture.layers.application">Application Layer</strong>
+                <span style="float:right;font-size:0.8rem;opacity:0.7">DeFi Protocols • AI Agent Marketplace • DID • Cross-Chain Bridges • NFT Platforms</span>
+              </div>
+            </div>
+            <div class="layer">
+              <div class="layer-bar layer-execution">
+                <strong data-i18n="architecture.layers.execution">Execution Layer</strong>
+                <span style="float:right;font-size:0.8rem;opacity:0.7">WASM Runtime (ink! + Solidity) • AEM • Parallel Execution Engine</span>
+              </div>
+            </div>
+            <div class="layer">
+              <div class="layer-bar layer-consensus">
+                <strong data-i18n="architecture.layers.consensus">Consensus Layer</strong>
+                <span style="float:right;font-size:0.8rem;opacity:0.7">Nominated Proof of Stake (NPoS) • GRANDPA Finality Gadget • AI Verification</span>
+              </div>
+            </div>
+            <div class="layer">
+              <div class="layer-bar layer-crypto">
+                <strong data-i18n="architecture.layers.crypto">Cryptographic Layer</strong>
+                <span style="float:right;font-size:0.8rem;opacity:0.7">FALCON-1024 • ML-KEM-768 • ML-DSA-87 • Hybrid Signatures</span>
+              </div>
+            </div>
+            <div class="layer">
+              <div class="layer-bar layer-network">
+                <strong data-i18n="architecture.layers.network">Network Layer</strong>
+                <span style="float:right;font-size:0.8rem;opacity:0.7">libp2p • PQC-Encrypted Handshake • gossipsub • Kademlia DHT</span>
+              </div>
+            </div>
+            <div class="layer">
+              <div class="layer-bar layer-data">
+                <strong data-i18n="architecture.layers.data">Data Layer</strong>
+                <span style="float:right;font-size:0.8rem;opacity:0.7">MMR State Storage • State Expiry • Quantum-Secure Commitments</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Post-Quantum Cryptography -->
+    <section id="crypto">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2 class="section-title" data-i18n="architecture.cryptoTitle">Post-Quantum Cryptography</h2>
+          <p class="section-description" data-i18n="architecture.cryptoDesc">Comparing NIST-standardized algorithms:</p>
+        </div>
+        
+        <div class="fade-in" style="overflow-x:auto;margin-bottom:3rem;">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th data-i18n="architecture.tableHeaders.0">Algorithm</th>
+                <th data-i18n="architecture.tableHeaders.1">Signature Size</th>
+                <th data-i18n="architecture.tableHeaders.2">Verification</th>
+                <th data-i18n="architecture.tableHeaders.3">NIST Level</th>
+                <th data-i18n="architecture.tableHeaders.4">Quantum Safe</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong class="gradient-text">FALCON-1024</strong></td>
+                <td>1,280 bytes</td>
+                <td>0.15 ms</td>
+                <td>Level 5</td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>SPHINCS+-SHAKE-256s</td>
+                <td>29,792 bytes</td>
+                <td>~200 ms</td>
+                <td>Level 5</td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>ML-DSA-87</td>
+                <td>2,420 bytes</td>
+                <td>~1 ms</td>
+                <td>Level 5</td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>ECDSA secp256k1</td>
+                <td>64 bytes</td>
+                <td>~0.1 ms</td>
+                <td>—</td>
+                <td><span class="cross">✗</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="card-grid">
+          <div class="card fade-in">
+            <div class="card-icon">🔐</div>
+            <h3 class="card-title" data-i18n="architecture.falcon">FALCON-1024</h3>
+            <p class="card-description" data-i18n="architecture.falconDesc">Primary signature scheme - fastest verification</p>
+            <ul style="list-style:none;margin-top:1rem;font-size:0.9rem;color:var(--text-secondary);">
+              <li>• Signature: 1,280 bytes</li>
+              <li>• Public Key: 1,793 bytes</li>
+              <li>• Security: NIST Level 5 (128-bit)</li>
+              <li>• Based on NTRU lattice</li>
+            </ul>
+          </div>
+          
+          <div class="card fade-in">
+            <div class="card-icon">🔑</div>
+            <h3 class="card-title" data-i18n="architecture.sphincs">SPHINCS+</h3>
+            <p class="card-description" data-i18n="architecture.sphincsDesc">Hash-based backup signature</p>
+            <ul style="list-style:none;margin-top:1rem;font-size:0.9rem;color:var(--text-secondary);">
+              <li>• Signature: ~30KB</li>
+              <li>• No lattice assumptions</li>
+              <li>• Only hash function security</li>
+              <li>• Conservative backup option</li>
+            </ul>
+          </div>
+          
+          <div class="card fade-in">
+            <div class="card-icon">📊</div>
+            <h3 class="card-title" data-i18n="architecture.ldgm">LDGM</h3>
+            <p class="card-description" data-i18n="architecture.ldgmDesc">Large Matrix signature for state</p>
+            <ul style="list-style:none;margin-top:1rem;font-size:0.9rem;color:var(--text-secondary);">
+              <li>• Efficient for batch verification</li>
+              <li>• Ideal for state commitments</li>
+              <li>• Small signature aggregation</li>
+              <li>• Complementary to FALCON</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- AI Module -->
+    <section id="ai">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">AI-Native</span>
+          <h2 class="section-title">AI Agent Execution <span class="gradient-text">Module (AEM)</span></h2>
+          <p class="section-description">Protocol-level native support for AI agents, not an application-layer afterthought.</p>
+        </div>
+        
+        <div class="card-grid">
+          <div class="card fade-in">
+            <div class="card-icon">🪪</div>
+            <h3 class="card-title">Native Agent Identity</h3>
+            <p class="card-description">
+              Every AI agent gets a protocol-level identity bound to their FALCON public key. No more wallet-as-proxy for AI agents.
+            </p>
+          </div>
+          
+          <div class="card fade-in">
+            <div class="card-icon">⚙️</div>
+            <h3 class="card-title">Autonomous Execution</h3>
+            <p class="card-description">
+              Agents can execute transactions autonomously with protocol-authorized permissions. No human signature required for agent-native operations.
+            </p>
+          </div>
+          
+          <div class="card fade-in">
+            <div class="card-icon">✓</div>
+            <h3 class="card-title">Verifiable Inference</h3>
+            <p class="card-description">
+              STARK-based on-chain verification ensures AI inference correctness. Trustless execution environment for AI computations.
+            </p>
+          </div>
+          
+          <div class="card fade-in">
+            <div class="card-icon">🤝</div>
+            <h3 class="card-title">Multi-Agent Coordination</h3>
+            <p class="card-description">
+              Built-in mechanisms for agent-to-agent trust, resource allocation, and dispute resolution. Native collaboration protocols.
+            </p>
+          </div>
+          
+          <div class="card fade-in">
+            <div class="card-icon">⭐</div>
+            <h3 class="card-title">Reputation System</h3>
+            <p class="card-description">
+              On-chain reputation tracking for AI agents. Historical performance, task completion rates, and community feedback.
+            </p>
+          </div>
+          
+          <div class="card fade-in">
+            <div class="card-icon">💰</div>
+            <h3 class="card-title">Resource Metering</h3>
+            <p class="card-description">
+              Dedicated gas model for AI operations. Compute, memory, and inference costs properly metered and priced.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Consensus -->
+    <section id="consensus">
+      <div class="container">
+        <div class="section-header fade-in">
+          <span class="section-label">Consensus</span>
+          <h2 class="section-title">Hybrid <span class="gradient-text">Consensus</span></h2>
+          <p class="section-description">NPoS for validator selection + PoW-style mining for fair distribution + AI verification layer.</p>
+        </div>
+        
+        <div class="card-grid">
+          <div class="card fade-in">
+            <div class="card-icon">⚡</div>
+            <h3 class="card-title">Nominated Proof of Stake</h3>
+            <p class="card-description">
+              Validators are elected based on stake and reputation. Nominators back trustworthy validators. 1,000+ validators supported.
+            </p>
+            <ul style="list-style:none;margin-top:1rem;font-size:0.9rem;color:var(--text-secondary);">
+              <li>• Minimum stake: 100,000 QYL</li>
+              <li>• Expected APY: 12-15%</li>
+              <li>• Slashing for misbehavior</li>
+            </ul>
+          </div>
+          
+          <div class="card fade-in">
+            <div class="card-icon">⛏️</div>
+            <h3 class="card-title">Fair Initial Distribution</h3>
+            <p class="card-description">
+              PoW-style mining in early phases ensures fair token distribution before stake becomes dominant.
+            </p>
+          </div>
+          
+          <div class="card fade-in">
+            <div class="card-icon">🧠</div>
+            <h3 class="card-title">AI Verification Layer</h3>
+            <p class="card-description">
+              AI agents can participate in validation by verifying transaction patterns and flagging anomalies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Performance -->
+    <section id="performance">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h2 class="section-title">Performance <span class="gradient-text">Metrics</span></h2>
+        </div>
+        
+        <div class="stats-grid fade-in">
+          <div class="stat-card">
+            <div class="stat-value">10,000+</div>
+            <div class="stat-label">Target TPS</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">&lt;1s</div>
+            <div class="stat-label">Finality Time</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">6s</div>
+            <div class="stat-label">Block Time</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">1,280B</div>
+            <div class="stat-label">FALCON Sig Size</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="text-center">
+      <div class="container fade-in">
+        <h2 class="mb-3">Ready to Build?</h2>
+        <p class="mb-4">Explore our developer resources and start building on Qylith today.</p>
+        <div class="flex justify-center gap-2" style="flex-wrap:wrap;">
+          <a href="developers.html" class="btn btn-primary" data-i18n="nav.developers">Developers</a>
+          <a href="whitepaper.html" class="btn btn-secondary" data-i18n="nav.whitepaper">Whitepaper</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="18" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
+              <path d="M20 8 L20 32 M12 16 Q20 12 28 16 M12 24 Q20 28 28 24" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
+              <circle cx="20" cy="20" r="4" fill="url(#logoGrad)"/>
+            </svg>
+            <span>QYLITH</span>
+          </a>
+          <p data-i18n="footer.disclaimer">Built with quantum-resistant cryptography and AI-native architecture.</p>
+          <div class="social-links">
+            <a href="https://github.com/bahuang081-svg/Qylith" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+            <a href="https://x.com/na_an97613" target="_blank" rel="noopener" class="social-link" aria-label="X (Twitter)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4 data-i18n="footer.quickLinks">Quick Links</h4>
+          <ul>
+            <li><a href="architecture.html" data-i18n="nav.architecture">Architecture</a></li>
+            <li><a href="tokenomics.html" data-i18n="nav.tokenomics">Tokenomics</a></li>
+            <li><a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a></li>
+            <li><a href="ecosystem.html" data-i18n="nav.ecosystem">Ecosystem</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4 data-i18n="footer.resources">Resources</h4>
+          <ul>
+            <li><a href="whitepaper.html" data-i18n="nav.whitepaper">Whitepaper</a></li>
+            <li><a href="developers.html" data-i18n="nav.developers">Developers</a></li>
+            <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
+            <li><a href="https://github.com/bahuang081-svg/Qylith" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4 data-i18n="footer.community">Community</h4>
+          <ul>
+            <li><a href="https://x.com/na_an97613" target="_blank" rel="noopener">X (Twitter)</a></li>
+            <li><a href="https://github.com/bahuang081-svg/Qylith" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer.copyright">© 2026 Qylith. All rights reserved.</p>
+        <p>The digital fortress for the quantum era.</p>
+      </div>
+    </div>
+  </footer>
+  
+  <button class="back-to-top" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
+  
+  <script src="js/particles.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

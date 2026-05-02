@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | Qylith</title>
+  <meta name="description" content="The page you're looking for doesn't exist.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .error-page { min-height: 100vh; }
+    .error-animation { margin-bottom: 2rem; }
+  </style>
+</head>
+<body data-page="notFound">
+  <canvas id="particles"></canvas>
+  
+  <nav class="navbar">
+    <a href="index.html" class="nav-logo"><svg viewBox="0 0 40 40" fill="none"><defs><linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00D4FF"/><stop offset="100%" stop-color="#7B2FFF"/></linearGradient></defs><circle cx="20" cy="20" r="18" stroke="url(#logoGrad)" stroke-width="2" fill="none"/><path d="M20 8 L20 32 M12 16 Q20 12 28 16 M12 24 Q20 28 28 24" stroke="url(#logoGrad)" stroke-width="2" fill="none"/><circle cx="20" cy="20" r="4" fill="url(#logoGrad)"/></svg><span>QYLITH</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="architecture.html">Architecture</a></li><li><a href="tokenomics.html">Tokenomics</a></li><li><a href="roadmap.html">Roadmap</a></li><li><a href="ecosystem.html">Ecosystem</a></li><li><a href="developers.html">Developers</a></li><li><a href="about.html">About</a></li><li><a href="whitepaper.html">Whitepaper</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="lang-toggle" aria-label="Toggle language"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><span>EN</span></button>
+      <button class="mobile-menu-btn" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  
+  <div class="mobile-nav">
+    <a href="index.html">Home</a><a href="architecture.html">Architecture</a><a href="tokenomics.html">Tokenomics</a><a href="roadmap.html">Roadmap</a><a href="ecosystem.html">Ecosystem</a><a href="developers.html">Developers</a><a href="about.html">About</a><a href="whitepaper.html">Whitepaper</a>
+  </div>
+  
+  <main class="page-content error-page">
+    <div class="container text-center">
+      <div class="error-animation">
+        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="errorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#00D4FF"/>
+              <stop offset="100%" stop-color="#7B2FFF"/>
+            </linearGradient>
+          </defs>
+          <circle cx="100" cy="100" r="90" stroke="url(#errorGrad)" stroke-width="3" fill="none" opacity="0.3"/>
+          <circle cx="100" cy="100" r="70" stroke="url(#errorGrad)" stroke-width="2" fill="none" opacity="0.5"/>
+          <circle cx="100" cy="100" r="50" stroke="url(#errorGrad)" stroke-width="1.5" fill="none" opacity="0.7"/>
+          <path d="M100 50 L100 90 M100 110 L100 150" stroke="url(#errorGrad)" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="100" cy="100" r="8" fill="url(#errorGrad)"/>
+        </svg>
+      </div>
+      
+      <div class="error-code">404</div>
+      <h2 class="gradient-text" data-i18n="notFound.title">Page Not Found</h2>
+      <p class="mb-4" style="max-width:400px;margin:1rem auto;color:var(--text-secondary);" data-i18n="notFound.desc">
+        The page you're looking for doesn't exist or has been moved.
+      </p>
+      
+      <div class="flex justify-center gap-2" style="flex-wrap:wrap;">
+        <a href="index.html" class="btn btn-primary" data-i18n="notFound.cta">Back to Home</a>
+        <a href="whitepaper.html" class="btn btn-secondary">Whitepaper</a>
+      </div>
+      
+      <div style="margin-top:4rem;padding-top:2rem;border-top:1px solid var(--border);">
+        <p style="font-size:0.9rem;color:var(--text-secondary);">The quantum era doesn't wait. Neither do we.</p>
+      </div>
+    </div>
+  </main>
+  
+  <button class="back-to-top" aria-label="Back to top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"></polyline></svg></button>
+  
+  <script src="js/particles.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
