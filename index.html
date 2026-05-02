@@ -11,15 +11,10 @@
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://qylith.xyz/">
   
-  <!-- Fonts -->
-  
   <!-- Styles -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body data-page="hero">
-  <!-- Particles Background -->
-  <canvas id="particles"></canvas>
-  
+<body>
   <!-- Navigation -->
   <nav class="navbar">
     <a href="index.html" class="nav-logo">
@@ -27,7 +22,7 @@
         <defs>
           <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
             <stop offset="0%" stop-color="#00D4FF"/>
-            <stop offset="100%" stop-color="#7B2FFF"/>
+            <stop offset="100%" stop-color="#6366F1"/>
           </linearGradient>
         </defs>
         <circle cx="20" cy="20" r="18" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
@@ -42,344 +37,150 @@
       <li><a href="architecture.html" data-i18n="nav.architecture">Architecture</a></li>
       <li><a href="tokenomics.html" data-i18n="nav.tokenomics">Tokenomics</a></li>
       <li><a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a></li>
-      <li><a href="ecosystem.html" data-i18n="nav.ecosystem">Ecosystem</a></li>
-      <li><a href="developers.html" data-i18n="nav.developers">Developers</a></li>
-      <li><a href="about.html" data-i18n="nav.about">About</a></li>
       <li><a href="whitepaper.html" data-i18n="nav.whitepaper">Whitepaper</a></li>
     </ul>
     
     <div class="nav-actions">
       <button class="lang-toggle" aria-label="Toggle language">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="2" y1="12" x2="22" y2="12"></line>
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-        </svg>
         <span>EN</span>
-      </button>
-      
-      <button class="mobile-menu-btn" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
       </button>
     </div>
   </nav>
-  
-  <!-- Mobile Navigation -->
-  <div class="mobile-nav">
-    <a href="index.html" data-i18n="nav.home">Home</a>
-    <a href="architecture.html" data-i18n="nav.architecture">Architecture</a>
-    <a href="tokenomics.html" data-i18n="nav.tokenomics">Tokenomics</a>
-    <a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a>
-    <a href="ecosystem.html" data-i18n="nav.ecosystem">Ecosystem</a>
-    <a href="developers.html" data-i18n="nav.developers">Developers</a>
-    <a href="about.html" data-i18n="nav.about">About</a>
-    <a href="whitepaper.html" data-i18n="nav.whitepaper">Whitepaper</a>
-  </div>
-  
-  <!-- Page Content -->
-  <main class="page-content">
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="hero-content">
-        <!-- Q Logo -->
-        <div class="q-logo">
-          <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#00D4FF"/>
-                <stop offset="100%" stop-color="#7B2FFF"/>
-              </linearGradient>
-              <filter id="glow">
-                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                <feMerge>
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="SourceGraphic"/>
-                </feMerge>
-              </filter>
-            </defs>
-            <circle cx="60" cy="60" r="50" stroke="url(#heroGrad)" stroke-width="3" fill="none" filter="url(#glow)"/>
-            <circle cx="60" cy="60" r="35" stroke="url(#heroGrad)" stroke-width="2" fill="none" opacity="0.6"/>
-            <circle cx="60" cy="60" r="20" stroke="url(#heroGrad)" stroke-width="1.5" fill="none" opacity="0.4"/>
-            <circle cx="60" cy="60" r="6" fill="url(#heroGrad)"/>
-            <path d="M85 85 L95 95" stroke="url(#heroGrad)" stroke-width="4" stroke-linecap="round"/>
-          </svg>
-        </div>
-        
-        <p class="hero-subtitle" data-i18n="hero.subtitle">The Post-Quantum AI-Native Layer 1</p>
-        <h1 class="hero-title gradient-text">QYLITH</h1>
-        <p class="hero-description" data-i18n="hero.description">
-          Building the digital fortress for the quantum era. Qylith combines NIST-standardized post-quantum cryptography with native AI agent support from the genesis block.
-        </p>
-        
-        <div class="hero-buttons">
-          <a href="whitepaper.html" class="btn btn-primary btn-lg" data-i18n="hero.cta1">View Whitepaper</a>
-          <a href="architecture.html" class="btn btn-secondary btn-lg" data-i18n="hero.cta2">Explore Architecture</a>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Stats Section -->
-    <section class="stats-section">
-      <div class="container">
-        <div class="stats-grid">
-          <div class="stat-card fade-in">
-            <div class="stat-value">10K+</div>
-            <div class="stat-label">Target TPS</div>
-          </div>
-          <div class="stat-card fade-in">
-            <div class="stat-value">&lt;1s</div>
-            <div class="stat-label">Finality Time</div>
-          </div>
-          <div class="stat-card fade-in">
-            <div class="stat-value">2.1B</div>
-            <div class="stat-label">QYL Total Supply</div>
-          </div>
-          <div class="stat-card fade-in">
-            <div class="stat-value">NIST 5</div>
-            <div class="stat-label">Security Level</div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Features Section -->
-    <section id="features">
-      <div class="container">
-        <div class="section-header fade-in">
-          <span class="section-label" data-i18n="features.label">Core Features</span>
-          <h2 class="section-title" data-i18n="features.title">Why Choose Qylith?</h2>
-        </div>
-        
-        <div class="card-grid">
-          <div class="card fade-in">
-            <div class="card-icon">🛡️</div>
-            <h3 class="card-title" data-i18n="features.security.title">Post-Quantum Security</h3>
-            <p class="card-description" data-i18n="features.security.desc">
-              FALCON-1024 signatures and ML-KEM-768 encryption, NIST Level 5 certified. Your assets are protected against quantum attacks from day one.
-            </p>
-            <a href="architecture.html#crypto" class="btn btn-sm btn-secondary" data-i18n="common.learnMore">Learn More</a>
-          </div>
-          
-          <div class="card fade-in">
-            <div class="card-icon">🧠</div>
-            <h3 class="card-title" data-i18n="features.ai.title">AI-Native Architecture</h3>
-            <p class="card-description" data-i18n="features.ai.desc">
-              Protocol-level AI Agent Execution Module (AEM) enables native identity, autonomous execution, and verifiable inference for AI agents.
-            </p>
-            <a href="architecture.html#ai" class="btn btn-sm btn-secondary" data-i18n="common.learnMore">Learn More</a>
-          </div>
-          
-          <div class="card fade-in">
-            <div class="card-icon">⚡</div>
-            <h3 class="card-title" data-i18n="features.modular.title">Modular Layer 1</h3>
-            <p class="card-description" data-i18n="features.modular.desc">
-              Hybrid PoW + AI verification consensus with parallel execution engine. 10,000+ TPS with sub-second finality.
-            </p>
-            <a href="architecture.html#consensus" class="btn btn-sm btn-secondary" data-i18n="common.learnMore">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Architecture Preview -->
-    <section id="architecture-preview">
-      <div class="container">
-        <div class="section-header fade-in">
-          <span class="section-label" data-i18n="architecture.label">Technical Architecture</span>
-          <h2 class="section-title" data-i18n="architecture.title">Built for the Quantum-AI Era</h2>
-          <p class="section-description" data-i18n="architecture.desc">
-            Every layer designed with quantum resistance and AI-native capability as core architectural axioms.
-          </p>
-        </div>
-        
-        <div class="architecture-diagram fade-in">
-          <div class="layer-diagram">
-            <div class="layer">
-              <div class="layer-bar layer-application">
-                <span data-i18n="architecture.layers.application">Application Layer</span>
-                <span style="float:right;font-size:0.8rem;opacity:0.7">DeFi • AI Agents • NFT • DID</span>
-              </div>
-            </div>
-            <div class="layer">
-              <div class="layer-bar layer-execution">
-                <span data-i18n="architecture.layers.execution">Execution Layer</span>
-                <span style="float:right;font-size:0.8rem;opacity:0.7">WASM Runtime + AEM</span>
-              </div>
-            </div>
-            <div class="layer">
-              <div class="layer-bar layer-consensus">
-                <span data-i18n="architecture.layers.consensus">Consensus Layer</span>
-                <span style="float:right;font-size:0.8rem;opacity:0.7">NPoS + AI Verification</span>
-              </div>
-            </div>
-            <div class="layer">
-              <div class="layer-bar layer-crypto">
-                <span data-i18n="architecture.layers.crypto">Cryptographic Layer</span>
-                <span style="float:right;font-size:0.8rem;opacity:0.7">FALCON-1024 • ML-KEM-768</span>
-              </div>
-            </div>
-            <div class="layer">
-              <div class="layer-bar layer-network">
-                <span data-i18n="architecture.layers.network">Network Layer</span>
-                <span style="float:right;font-size:0.8rem;opacity:0.7">libp2p + PQC Encryption</span>
-              </div>
-            </div>
-            <div class="layer">
-              <div class="layer-bar layer-data">
-                <span data-i18n="architecture.layers.data">Data Layer</span>
-                <span style="float:right;font-size:0.8rem;opacity:0.7">MMR • State Expiry</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="text-center mt-4">
-          <a href="architecture.html" class="btn btn-primary" data-i18n="common.learnMore">Learn More</a>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Token Section -->
-    <section id="token">
-      <div class="container">
-        <div class="section-header fade-in">
-          <span class="section-label" data-i18n="tokenomics.label">Tokenomics</span>
-          <h2 class="section-title">QYL <span class="gradient-text">Token</span></h2>
-          <p class="section-description">
-            Total Supply: 2,100,000,000 QYL — Designed for long-term sustainability
-          </p>
-        </div>
-        
-        <div class="card-grid">
-          <div class="card fade-in">
-            <h3 class="card-title" data-i18n="tokenomics.features.staking">Staking & Validation</h3>
-            <p class="card-description">
-              Stake QYL to secure the network and earn rewards. Become a validator or nominate trusted validators.
-            </p>
-          </div>
-          <div class="card fade-in">
-            <h3 class="card-title" data-i18n="tokenomics.features.governance">Governance Rights</h3>
-            <p class="card-description">
-              Participate in protocol decisions. Vote on upgrades, treasury allocations, and ecosystem proposals.
-            </p>
-          </div>
-          <div class="card fade-in">
-            <h3 class="card-title" data-i18n="tokenomics.features.gas">Transaction Fees</h3>
-            <p class="card-description">
-              Pay gas fees in QYL for all transactions, smart contract deployments, and cross-chain operations.
-            </p>
-          </div>
-        </div>
-        
-        <div class="text-center mt-4">
-          <a href="tokenomics.html" class="btn btn-secondary" data-i18n="common.learnMore">View Tokenomics</a>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Community Section -->
-    <section id="community">
-      <div class="container">
-        <div class="section-header fade-in">
-          <h2 class="section-title">Join the <span class="gradient-text">Community</span></h2>
-          <p class="section-description">
-            Connect with builders, researchers, and enthusiasts building the quantum-secure future.
-          </p>
-        </div>
-        
-        <div class="flex justify-center gap-3">
-          <a href="https://github.com/bahuang081-svg/Qylith" target="_blank" rel="noopener" class="btn btn-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-            GitHub
-          </a>
-          <a href="https://x.com/na_an97613" target="_blank" rel="noopener" class="btn btn-secondary">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-            X (Twitter)
-          </a>
-        </div>
-      </div>
-    </section>
-  </main>
-  
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <a href="index.html" class="nav-logo">
-            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="20" cy="20" r="18" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
-              <path d="M20 8 L20 32 M12 16 Q20 12 28 16 M12 24 Q20 28 28 24" stroke="url(#logoGrad)" stroke-width="2" fill="none"/>
-              <circle cx="20" cy="20" r="4" fill="url(#logoGrad)"/>
-            </svg>
-            <span>QYLITH</span>
-          </a>
-          <p data-i18n="footer.disclaimer">Built with quantum-resistant cryptography and AI-native architecture.</p>
-          <div class="social-links">
-            <a href="https://github.com/bahuang081-svg/Qylith" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-            </a>
-            <a href="https://x.com/na_an97613" target="_blank" rel="noopener" class="social-link" aria-label="X (Twitter)">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-        
-        <div class="footer-links">
-          <h4 data-i18n="footer.quickLinks">Quick Links</h4>
-          <ul>
-            <li><a href="architecture.html" data-i18n="nav.architecture">Architecture</a></li>
-            <li><a href="tokenomics.html" data-i18n="nav.tokenomics">Tokenomics</a></li>
-            <li><a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a></li>
-            <li><a href="ecosystem.html" data-i18n="nav.ecosystem">Ecosystem</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-links">
-          <h4 data-i18n="footer.resources">Resources</h4>
-          <ul>
-            <li><a href="whitepaper.html" data-i18n="nav.whitepaper">Whitepaper</a></li>
-            <li><a href="developers.html" data-i18n="nav.developers">Developers</a></li>
-            <li><a href="about.html" data-i18n="nav.about">About Us</a></li>
-            <li><a href="https://github.com/bahuang081-svg/Qylith" target="_blank" rel="noopener">GitHub</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-links">
-          <h4 data-i18n="footer.community">Community</h4>
-          <ul>
-            <li><a href="https://x.com/na_an97613" target="_blank" rel="noopener">X (Twitter)</a></li>
-            <li><a href="https://github.com/bahuang081-svg/Qylith" target="_blank" rel="noopener">GitHub</a></li>
-          </ul>
-        </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-subtitle" data-i18n="hero.subtitle">
+        Post-Quantum · AI-Native · Layer 1
       </div>
       
-      <div class="footer-bottom">
-        <p data-i18n="footer.copyright">© 2026 Qylith. All rights reserved.</p>
-        <p>The digital fortress for the quantum era.</p>
+      <h1 class="hero-title" data-i18n="hero.title">
+        Building the Digital<br>Fortress for the Quantum Era
+      </h1>
+      
+      <p class="hero-description" data-i18n="hero.description">
+        Qylith combines NIST-standardized post-quantum cryptography with native AI agent execution. 
+        The first Layer 1 built from genesis for the quantum-AI future.
+      </p>
+      
+      <div class="hero-cta">
+        <a href="whitepaper.html" class="btn btn-primary btn-lg" data-i18n="hero.cta1">
+          Read Whitepaper
+        </a>
+        <a href="https://github.com/bahuang081-svg/Qylith" target="_blank" class="btn btn-secondary btn-lg" data-i18n="hero.cta2">
+          View GitHub
+        </a>
       </div>
     </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-label" data-i18n="features.label">Core Features</div>
+      <h2 class="section-title" data-i18n="features.title">Why Qylith</h2>
+      <p class="section-description" data-i18n="features.description">
+        Every design decision prioritizes long-term security and native AI capabilities.
+      </p>
+    </div>
+    
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3 class="card-title" data-i18n="features.security.title">Post-Quantum Security</h3>
+        <p class="card-desc" data-i18n="features.security.desc">
+          FALCON-1024 signatures and ML-KEM-768 encryption. NIST Level 5 certified from day one.
+        </p>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="2"/>
+            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+          </svg>
+        </div>
+        <h3 class="card-title" data-i18n="features.ai.title">AI-Native Architecture</h3>
+        <p class="card-desc" data-i18n="features.ai.desc">
+          Protocol-level AI Agent Execution Module enables native identity and verifiable inference.
+        </p>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
+            <line x1="6" y1="6" x2="6.01" y2="6"/>
+            <line x1="6" y1="18" x2="6.01" y2="18"/>
+          </svg>
+        </div>
+        <h3 class="card-title" data-i18n="features.modular.title">Modular Layer 1</h3>
+        <p class="card-desc" data-i18n="features.modular.desc">
+          Hybrid PoW + AI verification consensus. Parallel execution engine with sub-second finality.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00D4FF"/>
+                <stop offset="100%" stop-color="#6366F1"/>
+              </linearGradient>
+            </defs>
+            <circle cx="20" cy="20" r="18" stroke="url(#logoGrad2)" stroke-width="2" fill="none"/>
+            <path d="M20 8 L20 32 M12 16 Q20 12 28 16 M12 24 Q20 28 28 24" stroke="url(#logoGrad2)" stroke-width="2" fill="none"/>
+            <circle cx="20" cy="20" r="4" fill="url(#logoGrad2)"/>
+          </svg>
+          <span>QYLITH</span>
+        </a>
+        <p data-i18n="footer.tagline">Building the digital fortress for the quantum era.</p>
+      </div>
+      
+      <div class="footer-column">
+        <h4 data-i18n="footer.resources">Resources</h4>
+        <ul>
+          <li><a href="whitepaper.html" data-i18n="nav.whitepaper">Whitepaper</a></li>
+          <li><a href="architecture.html" data-i18n="nav.architecture">Architecture</a></li>
+          <li><a href="tokenomics.html" data-i18n="nav.tokenomics">Tokenomics</a></li>
+          <li><a href="roadmap.html" data-i18n="nav.roadmap">Roadmap</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h4 data-i18n="footer.community">Community</h4>
+        <div class="footer-social">
+          <a href="https://github.com/bahuang081-svg/Qylith" target="_blank" class="social-link" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://x.com/na_an97613" target="_blank" class="social-link" aria-label="X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div>© 2026 Qylith. All rights reserved.</div>
+    </div>
   </footer>
-  
-  <!-- Back to Top -->
-  <button class="back-to-top" aria-label="Back to top">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <polyline points="18 15 12 9 6 15"></polyline>
-    </svg>
-  </button>
-  
+
   <!-- Scripts -->
-  <script src="js/particles.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
