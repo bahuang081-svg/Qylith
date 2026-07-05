@@ -1,168 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Qylith — Post-Quantum Layer 1</title>
-  <meta name="description" content="Qylith is the first post-quantum, AI-native Layer 1 blockchain. Built with NIST-standardized cryptography.">
-  <link rel="canonical" href="https://qylith.xyz/">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Qylith 游戏厅，打开就能玩的轻量小游戏合集。">
+  <title>Qylith 游戏厅</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="nav">
-    <a href="index.html" class="nav-logo">QYLITH</a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="architecture.html">Architecture</a></li>
-      <li><a href="tokenomics.html">Tokenomics</a></li>
-      <li><a href="roadmap.html">Roadmap</a></li>
-      <li><a href="whitepaper.html">Whitepaper</a></li>
-    </ul>
-  </nav>
+  <main class="app-shell">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">qylith.xyz</p>
+        <h1>Qylith 游戏厅</h1>
+        <p class="lead">三个随手开局的小游戏，手机和电脑都能玩，分数只保存在本机。</p>
+      </div>
+      <div class="today-panel" aria-live="polite">
+        <span class="panel-label">今日最佳</span>
+        <strong id="todayBest">0</strong>
+        <span id="todayGame">还没有战绩</span>
+      </div>
+    </section>
 
-  <!-- Hero -->
-  <section class="hero">
-    <p class="hero-subtitle">Post-Quantum · AI-Native · Layer 1</p>
-    <h1 class="hero-title">Building the foundation for the quantum era.</h1>
-    <p class="hero-description">
-      The first Layer 1 built from genesis with NIST-standardized post-quantum cryptography 
-      and native AI agent execution. Security is not an afterthought.
-    </p>
-    <div class="hero-cta">
-      <a href="whitepaper.html" class="btn btn-primary">Read Whitepaper</a>
-      <a href="https://github.com/bahuang081-svg/Qylith" target="_blank" class="btn btn-secondary">View GitHub</a>
-    </div>
-  </section>
+    <nav class="game-switch" aria-label="选择游戏">
+      <button class="game-tab is-active" type="button" data-game="tap">
+        <span>快点泡泡</span>
+        <small>20 秒反应</small>
+      </button>
+      <button class="game-tab" type="button" data-game="memory">
+        <span>记忆翻牌</span>
+        <small>8 组配对</small>
+      </button>
+      <button class="game-tab" type="button" data-game="color">
+        <span>色彩急转</span>
+        <small>12 轮判断</small>
+      </button>
+    </nav>
 
-  <!-- Features -->
-  <section class="section">
-    <div class="section-header">
-      <p class="section-label">Core Principles</p>
-      <h2 class="section-title">Built for the next 50 years.</h2>
-      <p class="section-description">
-        Every design decision prioritizes long-term security and extensibility.
-        No tradeoffs for short-term hype.
-      </p>
-    </div>
-    
-    <div class="features-grid">
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-          </svg>
-        </div>
-        <h3 class="feature-title">Post-Quantum Secure</h3>
-        <p class="feature-desc">
-          FALCON-1024 signatures and ML-KEM-768 key exchange. 
-          NIST Level 5 certified cryptography from day one.
-        </p>
-      </div>
-      
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-            <circle cx="12" cy="12" r="2"/>
-          </svg>
-        </div>
-        <h3 class="feature-title">AI-Native Architecture</h3>
-        <p class="feature-desc">
-          Protocol-level AI execution module. Native identity, 
-          verifiable inference, and autonomous agent capabilities.
-        </p>
-      </div>
-      
-      <div class="feature">
-        <div class="feature-icon">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"/>
-            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"/>
-            <line x1="6" y1="6" x2="6.01" y2="6"/>
-            <line x1="6" y1="18" x2="6.01" y2="18"/>
-          </svg>
-        </div>
-        <h3 class="feature-title">Modular Design</h3>
-        <p class="feature-desc">
-          Hybrid consensus with parallel execution engine. 
-          Sub-second finality with sustainable security guarantees.
-        </p>
-      </div>
-    </div>
-  </section>
+    <div class="play-layout">
+      <section class="arena" aria-label="游戏区">
+        <header class="arena-head">
+          <div>
+            <p class="mode-label" id="modeLabel">反应</p>
+            <h2 id="gameTitle">快点泡泡</h2>
+            <p id="gameHint">看见亮起的泡泡就点它，连击会加分。</p>
+          </div>
+          <button class="primary-action" id="startBtn" type="button">开始</button>
+        </header>
 
-  <!-- Architecture Preview -->
-  <section class="architecture">
-    <div class="section-header">
-      <p class="section-label">Technology</p>
-      <h2 class="section-title">Designed for security.</h2>
-    </div>
-    
-    <div class="architecture-content">
-      <div class="architecture-layers">
-        <div class="architecture-layer">
-          <span class="layer-name">Application Layer</span>
-          <span class="layer-desc">DApps, AI Agents, DeFi</span>
+        <div class="score-strip" aria-live="polite">
+          <div>
+            <span>本局</span>
+            <strong id="scoreValue">0</strong>
+          </div>
+          <div>
+            <span id="metricLabel">连击</span>
+            <strong id="metricValue">0</strong>
+          </div>
+          <div>
+            <span>剩余</span>
+            <strong id="timeValue">20</strong>
+          </div>
+          <div>
+            <span>最高</span>
+            <strong id="bestValue">0</strong>
+          </div>
         </div>
-        <div class="architecture-layer">
-          <span class="layer-name">Execution Layer</span>
-          <span class="layer-desc">EVM + AI VM</span>
-        </div>
-        <div class="architecture-layer">
-          <span class="layer-name">Consensus Layer</span>
-          <span class="layer-desc">Hybrid PoW + AI Verification</span>
-        </div>
-        <div class="architecture-layer">
-          <span class="layer-name">Cryptographic Layer</span>
-          <span class="layer-desc">FALCON-1024, ML-KEM-768</span>
-        </div>
-        <div class="architecture-layer">
-          <span class="layer-name">Network Layer</span>
-          <span class="layer-desc">P2P, libp2p</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo">QYLITH</a>
-        <p>Building the digital fortress for the quantum era.</p>
-      </div>
-      
-      <div class="footer-column">
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="whitepaper.html">Whitepaper</a></li>
-          <li><a href="architecture.html">Architecture</a></li>
-          <li><a href="tokenomics.html">Tokenomics</a></li>
-          <li><a href="roadmap.html">Roadmap</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-column">
-        <h4>Community</h4>
-        <div class="footer-social">
-          <a href="https://github.com/bahuang081-svg/Qylith" target="_blank" aria-label="GitHub">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-          </a>
-          <a href="https://x.com/na_an97613" target="_blank" aria-label="X">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
+        <p class="status-line" id="statusLine">选一个游戏，然后开始。</p>
+
+        <section class="game-pane" id="tapPane" aria-label="快点泡泡">
+          <div class="tap-board" id="tapBoard"></div>
+        </section>
+
+        <section class="game-pane" id="memoryPane" aria-label="记忆翻牌" hidden>
+          <div class="memory-board" id="memoryBoard"></div>
+        </section>
+
+        <section class="game-pane" id="colorPane" aria-label="色彩急转" hidden>
+          <div class="color-stage">
+            <div class="target-swatch" id="targetSwatch"></div>
+            <div class="color-copy">
+              <span id="roundValue">第 1 轮</span>
+              <strong id="targetName">珊瑚红</strong>
+            </div>
+          </div>
+          <div class="color-choices" id="colorChoices"></div>
+        </section>
+      </section>
+
+      <aside class="scoreboard" aria-label="排行榜">
+        <header class="board-head">
+          <div>
+            <p class="mode-label">本机记录</p>
+            <h2>排行榜</h2>
+          </div>
+          <button class="ghost-action" id="clearBtn" type="button">清空</button>
+        </header>
+        <div class="best-list" id="bestList"></div>
+        <h3>最近战绩</h3>
+        <ol class="recent-list" id="recentList"></ol>
+      </aside>
     </div>
-    
-    <div class="footer-bottom">
-      <div>© 2026 Qylith. All rights reserved.</div>
-    </div>
-  </footer>
+  </main>
+
+  <script src="game.js"></script>
 </body>
 </html>
